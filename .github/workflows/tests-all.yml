@@ -1,5 +1,6 @@
 name: 'Test Formulae'
 on:
+  push:
   workflow_dispatch:
   repository_dispatch:
   schedule:
@@ -42,7 +43,7 @@ jobs:
           extensions: ${{ matrix.extensions }}
           key: homebrew-extensions-all-v2
       - name: Setup PHP
-        uses: shivammathur/setup-php@develop
+        uses: shivammathur/setup-php@verbose
         with:
           php-version: ${{ matrix.php }}
           extensions: ${{ matrix.extensions }}
